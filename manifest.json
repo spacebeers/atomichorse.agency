@@ -1,0 +1,8 @@
+{
+  "name": "Atomic Horse",
+  "short_name": "AH",
+  "lang": "en-GB",
+  "start_url": "/",
+  "display": "minimal-ui",
+  "theme_color": "#000000"
+}

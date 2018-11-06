@@ -1,0 +1,77 @@
+<html>
+    <head>
+        <title>Atomic Horse Ltd | Web development and design for humans and horses</title>
+        <meta name="description" content="Atomic Horse is an agency for designers who need expert web development for their projects.">
+        <meta name="keywords" content="Brighton, Portslade, Sussex, East Sussex, West Sussex, web design, web development, ecommerce, Hove, agency, wordpress, css, javascript">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="manifest" href="/manifest.json">
+        <link rel="icon" type="image/x-icon" href="favicon.ico">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <link href="https://fonts.googleapis.com/css?family=BioRhyme:400,700|Space+Mono" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="less/app.less">
+        <script src="vendor/ScrollMagic.min.js"></script>
+    </head>
+    <body>
+        <div class="hero">
+            <header>
+                <h1 class="logo">Atomic<span>Horse</span></h1>
+                <button aria-label="Click to open menu" id="nav">
+                    <svg width="40px" height="40px" viewBox="0 0 20 18">
+                        <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                            <g id="Icon-Set" transform="translate(-210.000000, -887.000000)" fill="currentColor">
+                                <path d="M229,895 L211,895 C210.448,895 210,895.448 210,896 C210,896.553 210.448,897 211,897 L229,897 C229.552,897 230,896.553 230,896 C230,895.448 229.552,895 229,895 L229,895 Z M229,903 L211,903 C210.448,903 210,903.448 210,904 C210,904.553 210.448,905 211,905 L229,905 C229.552,905 230,904.553 230,904 C230,903.448 229.552,903 229,903 L229,903 Z M211,889 L229,889 C229.552,889 230,888.553 230,888 C230,887.448 229.552,887 229,887 L211,887 C210.448,887 210,887.448 210,888 C210,888.553 210.448,889 211,889 L211,889 Z"
+                                    id="Fill-70"></path>
+                            </g>
+                        </g>
+                    </svg>
+                    MENU
+                </button>
+            </header>
+
+            <div class="bomb" role="presentation"></div>
+            <div class="horse" role="presentation"></div>
+            <div class="trees" role="presentation"></div>
+            <div class="more-trees" role="presentation"></div>
+        </div>
+
+        <div class="container">
+            <h2>Welcome to <br />ATOMIC HORSE</h2>
+
+            <p>Lorem ipsum dolor sit amet, no modo munere vel, no quis inciderint definitiones sit, utroque luptatum</p>
+
+            <p>At pri aperiam appetere, est no inani doctus deseruisse. Duo aeque molestie disputando ex, doctus molestie adversarium
+            pro ad. Ut sit eligendi praesent, ludus inimicus in sed. Vim in dicta voluptatum honestatis, cu sea modus tantas, aeque
+            laudem eu his. Ut nam delenit accommodare deterruisset, impedit constituam ne sit. Esse recusabo cu mei, magna albucius
+            ad mea.</p>
+
+            <p>Laudem minimum accusamus vim ne. Pro ei bonorum rationibus. Nec liber abhorreant incorrupte ei, et diceret singulis
+            has. No duo facete iisque utroque, duis ludus timeam et est, duo et doctus tractatos. His nisl solum moderatius ad, eu
+            vim mutat postulant moderatius, an nam prompta recusabo.</p>
+        </div>
+
+        <script async src="scripts/app.js"></script>
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-3539496-7"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+
+            gtag('config', 'UA-3539496-7');
+        </script>
+        <!-- Load Facebook SDK for JavaScript -->
+        <div id="fb-root"></div>
+        <script>(function (d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = 'https://connect.facebook.net/en_GB/sdk/xfbml.customerchat.js#xfbml=1&version=v2.12&autoLogAppEvents=1';
+                fjs.parentNode.insertBefore(js, fjs);
+            }(document, 'script', 'facebook-jssdk'));</script>
+
+        <!-- Your customer chat code -->
+        <div class="fb-customerchat" attribution=setup_tool page_id="300252940578908" theme_color="#00E9FF" logged_in_greeting="Hi! How can we help you?"
+            logged_out_greeting="Hi! How can we help you?">
+        </div>
+    </body>
+</html>

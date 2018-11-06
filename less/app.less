@@ -1,0 +1,149 @@
+@brand-font: 'BioRhyme', serif;
+@standard-font: 'Space Mono', monospace;
+@palette-dark: #111111;
+@palette-light: #eeeeee;
+@palette-primary: #00E9FF;
+@side-padding: 10vw;
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-family: @standard-font;
+    background: @palette-dark;
+    color: @palette-light;
+    text-align: center;
+    font-size: 1.6rem;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    padding: 100px @side-padding;
+    position: relative;
+    text-align: left;
+
+    button {
+        position: absolute;
+        top: 100px;
+        right: @side-padding;
+        width: 70px;
+        height: 70px;
+        z-index: 1;
+        mix-blend-mode: difference;
+        border: none;
+        outline: none;
+        background: transparent;
+        color: @palette-primary;
+        cursor: pointer;
+
+        svg {
+            margin-bottom: 5px;
+        }
+    }
+}
+
+.container {
+    padding: 40px @side-padding;
+}
+
+.hero {
+    background: @palette-primary;
+    height: 100vh;
+    position: relative;
+
+    &::after {
+        content: "";
+        background: @palette-dark;
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 10vh;
+    }
+}
+
+.hero + .container {
+    padding-top: 0;
+}
+
+.logo {
+    text-transform: uppercase;
+    color: @palette-dark;
+    text-align: right;
+    display: inline-block;
+    font-size: 7.2rem;
+    line-height: 7rem;
+    font-family: @brand-font;
+    font-weight: bold;
+    span {
+        display: block;
+        font-size: 9.6rem;
+        font-family: @standard-font;
+        font-weight: normal;
+    }
+}
+
+.bomb {
+    background: url(../assets/bomb.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 400px;
+    height: 140px;
+    transform: rotate(-40deg);
+    position: absolute;
+    top: 140px;
+    right: @side-padding;
+}
+
+.horse {
+    background: url(../assets/horse.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 80px;
+    height: 80px;
+    position: absolute;
+    bottom: 9vh;
+    left: @side-padding * 3;
+}
+
+.trees {
+    background: url(../assets/trees.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 200px;
+    height: 219px;
+    position: absolute;
+    bottom: 9vh;
+    left: @side-padding / 2;
+}
+
+.more-trees {
+    background: url(../assets/more-trees.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 138px;
+    height: 166px;
+    position: absolute;
+    bottom: 9vh;
+    right: @side-padding / 2;
+}
+
+h1, h2 {
+    padding: 0;
+    margin: 0;
+}
+
+h2 {
+    font-size: 4.8rem;
+    font-family: @brand-font;
+}
+
+h2 + p {
+    font-size: 2.4rem;
+}
