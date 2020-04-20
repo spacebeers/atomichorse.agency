@@ -1,9 +1,20 @@
 @brand-font: 'BioRhyme', serif;
 @standard-font: 'Space Mono', monospace;
-@palette-dark: #111111;
+@palette-dark: #0F0F0F;
 @palette-light: #eeeeee;
 @palette-primary: #00E9FF;
 @side-padding: 10vw;
+
+@screen-xxs-max: 575px;
+@screen-xs-min: @screen-xxs-max + 1;
+@screen-xs-max: 768px;
+@screen-sm-min: @screen-xs-max + 1;
+@screen-sm-max: 991px;
+@screen-md-min: @screen-sm-max + 1;
+@screen-md-max: 1199px;
+@screen-lg-min: @screen-md-max + 1;
+
+
 
 * {
   box-sizing: border-box;
@@ -21,12 +32,47 @@ body {
     font-size: 1.6rem;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
 header {
     padding: 100px @side-padding;
     position: relative;
     text-align: left;
+
+    nav {
+        display: none;
+        @media (min-width: @screen-md-min) {
+            display: block;
+        }
+        position: absolute;
+        top: 100px;
+        right: @side-padding;
+        z-index: 1;
+        mix-blend-mode: difference;
+    }
+
+    ul {
+        display: flex;
+        justify-content: flex-end;
+        list-style: none;
+        text-transform: uppercase;
+        font-family: @standard-font;
+        font-size: 2.0rem;
+
+        li {
+            margin-right: 4rem;
+
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        a {
+            color: @palette-primary;
+            text-decoration: none;
+        }
+    }
 
     button {
         position: absolute;
@@ -54,22 +100,11 @@ header {
 
 .hero {
     background: @palette-primary;
-    height: 100vh;
-    position: relative;
-
-    &::after {
-        content: "";
-        background: @palette-dark;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        height: 10vh;
+    min-height: 100vh;
+    @media (min-width: @screen-xs-min) {
+        min-height: 90vh;
     }
-}
-
-.hero + .container {
-    padding-top: 0;
+    position: relative;
 }
 
 .logo {
@@ -97,7 +132,7 @@ header {
     height: 140px;
     transform: rotate(-40deg);
     position: absolute;
-    top: 140px;
+    top: 170px;
     right: @side-padding;
 }
 
@@ -108,30 +143,57 @@ header {
     width: 80px;
     height: 80px;
     position: absolute;
-    bottom: 9vh;
+    bottom: -4px;
     left: @side-padding * 3;
 }
 
 .trees {
-    background: url(../assets/trees.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 200px;
-    height: 219px;
-    position: absolute;
-    bottom: 9vh;
-    left: @side-padding / 2;
-}
+    width: 150vw;
+    right: -30vw;
+    left: -30vw;
+    @media (min-width: @screen-xxs-max) {
+        width: 130vw;
+        right: -15vw;
+        left: -15vw;
+    }
+    @media (min-width: @screen-xs-min) {
+        width: 110vw;
+        right: -5vw;
+        left: -5vw;
+    }
+    @media (min-width: @screen-sm-min) {
+        width: 100vw;
+        right: 0vw;
+        left: 0vw;
+    }
 
-.more-trees {
-    background: url(../assets/more-trees.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 138px;
-    height: 166px;
+    transition: all 0.2s linear;
+    bottom: 0;
+    overflow: hidden;
     position: absolute;
-    bottom: 9vh;
-    right: @side-padding / 2;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+
+    &::before {
+        content: "";
+        display: block;
+        background: url(../assets/trees.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 200px;
+        height: 219px;
+    }
+
+    &::after {
+        content: "";
+        display: block;
+        background: url(../assets/more-trees.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 138px;
+        height: 166px;
+    }
 }
 
 h1, h2 {
@@ -146,4 +208,27 @@ h2 {
 
 h2 + p {
     font-size: 2.4rem;
+}
+
+a {
+    color: @palette-primary;
+}
+
+footer {
+    margin: 40px 0;
+    @media (min-width: @screen-xs-min) {
+        margin: 75px 0 50px 0;
+    }
+}
+
+.social-links {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+
+    li {
+        margin: 0 5px;
+    }
 }

@@ -9,6 +9,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "less": "^3.8.1"
+    "less": "^3.8.1",
+    "parcel": "^1.12.4"
+  },
+  "dependencies": {
+    "posthtml-include": "^1.2.0"
   }
 }
