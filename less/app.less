@@ -49,7 +49,6 @@ header {
         top: 100px;
         right: @side-padding;
         z-index: 1;
-        mix-blend-mode: difference;
     }
 
     ul {
@@ -58,7 +57,9 @@ header {
         list-style: none;
         text-transform: uppercase;
         font-family: @standard-font;
+        font-weight: bold;
         font-size: 2.0rem;
+        margin-top: 0;
 
         li {
             margin-right: 4rem;
@@ -69,7 +70,7 @@ header {
         }
 
         a {
-            color: @palette-primary;
+            color: @palette-dark;
             text-decoration: none;
         }
     }
@@ -94,17 +95,35 @@ header {
     }
 }
 
+
 .container {
     padding: 40px @side-padding;
 }
 
 .hero {
     background: @palette-primary;
+    background: url(../assets/background.png);
+    background-size: cover;
+    background-position: center;
     min-height: 100vh;
     @media (min-width: @screen-xs-min) {
         min-height: 90vh;
     }
     position: relative;
+
+    &::after {
+        //content: "";
+        background: url(../assets/hills.png);
+        width: 100%;
+        height: 96px;
+        position: absolute;
+        bottom: -15px;
+        left: 0;
+        right: 0;
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position-y: bottom;        
+    }
 }
 
 .logo {
@@ -124,18 +143,6 @@ header {
     }
 }
 
-.bomb {
-    background: url(../assets/bomb.png);
-    background-size: cover;
-    background-repeat: no-repeat;
-    width: 400px;
-    height: 140px;
-    transform: rotate(-40deg);
-    position: absolute;
-    top: 170px;
-    right: @side-padding;
-}
-
 .horse {
     background: url(../assets/horse.png);
     background-size: cover;
@@ -144,56 +151,8 @@ header {
     height: 80px;
     position: absolute;
     bottom: -4px;
-    left: @side-padding * 3;
-}
-
-.trees {
-    width: 150vw;
-    right: -30vw;
-    left: -30vw;
-    @media (min-width: @screen-xxs-max) {
-        width: 130vw;
-        right: -15vw;
-        left: -15vw;
-    }
-    @media (min-width: @screen-xs-min) {
-        width: 110vw;
-        right: -5vw;
-        left: -5vw;
-    }
-    @media (min-width: @screen-sm-min) {
-        width: 100vw;
-        right: 0vw;
-        left: 0vw;
-    }
-
-    transition: all 0.2s linear;
-    bottom: 0;
-    overflow: hidden;
-    position: absolute;
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-
-    &::before {
-        content: "";
-        display: block;
-        background: url(../assets/trees.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 200px;
-        height: 219px;
-    }
-
-    &::after {
-        content: "";
-        display: block;
-        background: url(../assets/more-trees.png);
-        background-size: cover;
-        background-repeat: no-repeat;
-        width: 138px;
-        height: 166px;
-    }
+    right: 15vw;
+    transform: scaleX(-1);
 }
 
 h1, h2 {
