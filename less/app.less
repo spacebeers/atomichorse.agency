@@ -2,7 +2,7 @@
 @standard-font: 'Space Mono', monospace;
 @palette-dark: #0F0F0F;
 @palette-light: #eeeeee;
-@palette-primary: #00E9FF;
+@palette-primary: #ff2a1d;
 @side-padding: 10vw;
 
 @screen-xxs-max: 575px;
@@ -38,7 +38,10 @@ body {
 header {
     padding: 100px @side-padding;
     position: relative;
-    text-align: left;
+    text-align: center;
+    @media (min-width: @screen-xs-min) {
+        text-align: left;
+    }
 
     nav {
         display: none;
@@ -110,38 +113,34 @@ header {
     background: @palette-primary;
     background: url(../assets/background.png);
     background-size: cover;
-    background-position: center;
-    height: -webkit-fill-available;
-    min-height: -webkit-fill-available;
+    background-position: center bottom;
+    height: 85vh;
+    min-height: 85vh;
     position: relative;
-
-    &::after {
-        //content: "";
-        background: url(../assets/hills.png);
-        width: 100%;
-        height: 96px;
-        position: absolute;
-        bottom: -15px;
-        left: 0;
-        right: 0;
-        background-size: 100%;
-        background-repeat: no-repeat;
-        background-position-y: bottom;        
-    }
 }
 
 .logo {
+    margin-top: 0;
+    transition: font-size 0.2s ease-in;
     text-transform: uppercase;
     color: @palette-dark;
-    text-align: right;
     display: inline-block;
-    font-size: 7.2rem;
-    line-height: 7rem;
+    text-align: center;
+    font-size: 5rem;
+    line-height: 6rem;
+    @media (min-width: @screen-xs-min) {
+        text-align: right;
+        font-size: 7.2rem;
+        line-height: 7rem;
+    }
     font-family: @brand-font;
     font-weight: bold;
     span {
         display: block;
-        font-size: 9.6rem;
+        font-size: 7.8rem;
+        @media (min-width: @screen-xs-min) {
+            font-size: 9.6rem;
+        }
         font-family: @standard-font;
         font-weight: normal;
     }
