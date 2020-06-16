@@ -69,6 +69,12 @@ header {
             }
         }
 
+        .active {
+            a {
+                color: white;
+            }
+        }
+
         a {
             color: @palette-dark;
             text-decoration: none;
@@ -105,10 +111,8 @@ header {
     background: url(../assets/background.png);
     background-size: cover;
     background-position: center;
-    min-height: 100vh;
-    @media (min-width: @screen-xs-min) {
-        min-height: 90vh;
-    }
+    height: -webkit-fill-available;
+    min-height: -webkit-fill-available;
     position: relative;
 
     &::after {
@@ -190,4 +194,12 @@ footer {
     li {
         margin: 0 5px;
     }
+}
+
+.wiredsussex-logo {
+    display: inline-block;
+    background: white;
+    border-radius: 3px;
+    padding: 8px;
+    margin-top: 20px;
 }

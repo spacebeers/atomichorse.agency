@@ -10,9 +10,11 @@
   "license": "ISC",
   "devDependencies": {
     "less": "^3.8.1",
-    "parcel": "^1.12.4"
+    "parcel": "*",
+    "posthtml-expressions": "^1.4.2",
+    "posthtml-include": "^1.4.3"
   },
   "dependencies": {
-    "posthtml-include": "^1.2.0"
+    "turbolinks": "^5.2.0"
   }
 }
