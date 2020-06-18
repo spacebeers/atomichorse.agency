@@ -10,6 +10,7 @@
   "license": "ISC",
   "devDependencies": {
     "less": "^3.8.1",
+    "modern-css-reset": "^1.1.0",
     "parcel": "*",
     "posthtml-expressions": "^1.4.2",
     "posthtml-include": "^1.4.3"
